@@ -1,0 +1,59 @@
+﻿@{
+
+	// c# code block 
+
+	string pagetitle = " route academy ";
+	int age = 22;
+	List<int> numbers = [1, 2, 3, 4, 5];
+	//don not forget to use @ befor your word
+}
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>
+			@pagetitle   
+		</title>
+	</head>
+	<body>
+		<h1>welcome to route academy </h1>
+		<h2>@pagetitle</h2>
+		<p> age : @age</p>
+		<p>@(age+1)</p>
+
+
+	   @if (age >= 18)
+		{
+			<p> you are an adult</p>
+		}
+
+		else
+		{
+			<p> you are under 18</p>
+		}
+
+
+		<ul>
+
+			@foreach(int n in numbers)
+			{
+				<li> number : @n</li>
+			}
+		</ul>
+
+
+		<a asp-controller="home" asp-action="index">home </a> //tag helper 
+
+		<a asp-controller="products" asp-action="Details" asp-route-id="5">product 5 </a>
+
+		<environment include="developement">
+			<p>  running in the developement </p>
+		</environment>
+
+		<environment exclude="developement">
+		<p> running in the developement</p>
+		</environment>
+
+
+
+	</body>
+</html>
